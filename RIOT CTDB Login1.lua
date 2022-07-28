@@ -19,7 +19,7 @@ function HOME()
 end
 
 function TH1()
-    t = gg.makeRequest('https://raw.githubusercontent.com/RIOTTREU/FNHIR/WALL/RIOT%20CTDB%20TH.lua').content if t then pcall(load(t)) end
+    t = gg.makeRequest('https://raw.githubusercontent.com/RIOTTREU/RIOT-CTDB/main/RIOT%20CTDB%20TH.lua').content if t then pcall(load(t)) end
 end
 
 function EN1()
