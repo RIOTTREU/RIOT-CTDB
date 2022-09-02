@@ -15,7 +15,8 @@ function TH1()
     oc = gg.choice({
         'ฟังชั้นพื้นฐานของผู้เล่น',
         'ฟังชั้นข้ามบอส',
-        'ฟังชั้นวาป',
+        'ฟังชั้นวาป เมือง',
+	'ฟังชั้นวาป บอส',
         'ออก'
     },nil,[[DEVELOPER : RIOT]])
     if oc == nil then
@@ -29,7 +30,10 @@ function TH1()
         if oc == 3 then
             wtc()
         end
-        if oc == 4 then
+	if oc == 4 then
+            wtc1()
+        end
+        if oc == 5 then
             gg.clearList(true) os.exit()
         end
     end
@@ -337,7 +341,48 @@ end
 
 
 
-
+function wtc1()
+    gg.clearResults()
+    gg.searchNumber("11001~20008;0~255;-1::9" , gg.TYPE_DWORD)
+    gg.refineNumber("11001~20008", gg.TYPE_DWORD)
+    Results = gg.getResults(1)
+    Results = gg.getResults(1)
+    offset = -100
+    s = {}
+    s[1] = {}
+    s[1].address = Results[1].address + offset
+    s[1].flags = 4
+    s[1].freeze = false
+    s[1].name = "map info"
+    s[1].value = 80010
+    gg.setValues(s)
+    gg.addListItems(s)
+    offset = -88
+    s = {}
+    s[1] = {}
+    s[1].address = Results[1].address + offset
+    s[1].flags = 4
+    s[1].freeze = false
+    s[1].value = 12800
+    gg.setValues(s)
+    offset = -84
+    s = {}
+    s[1] = {}
+    s[1].address = Results[1].address + offset
+    s[1].flags = 4
+    s[1].freeze = false
+    s[1].value =  7680
+    gg.setValues(s)
+    offset = 204
+    s = {}
+    s[1] = {}
+    s[1].address = Results[1].address + offset
+    s[1].flags = 4
+    s[1].freeze = false
+    s[1].value = 16842752
+    gg.setValues(s)
+    gg.clearResults()
+end
 
 function wtc()
     gg.clearResults()
