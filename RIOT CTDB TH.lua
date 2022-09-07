@@ -47,7 +47,7 @@ function FNCLASSPY()
     if FP == nil then
     else
         if FP == 1 then
-            CLASSPY()
+            ASU() SN() SNA()
         end
         if FP == 2 then
             FNPY()
